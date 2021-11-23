@@ -1,0 +1,341 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1.6;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+
+	font-family: Montserrat, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	line-height: 1.2;
+}
+
+/* Add a gray color to all navbar links */
+.menu{
+	display: flex;	
+	font-size: 13px !important;
+	letter-spacing: 3px;	
+	height: 50px;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	padding: 5px 10px 5px 10px;	
+	box-shadow: 0px 0px 8px 0px black;
+}
+
+
+.menu-container{
+	display: flex; 
+	height: 60px;
+	width: 100%;
+	/* This aligns items to the end line on main-axis */
+}
+
+.menuRightside{
+	display: flex;	
+}
+
+.menu  a, .menu { 
+	color: #d5d5d5 !important;
+	padding: 5px 10px 5px 10px; 
+	text-decoration: none;
+}
+
+/* On hover, the links will turn white */
+.menu  a:hover {
+	color: #66cccc !important;
+	text-decoration: none;
+}
+
+/* The active link */
+.menu .active a {
+	color: #66cccc !important;
+	background-color:#66cccc !important;
+}
+
+.hero-image{
+	display: flex;
+	justify-content: center;	
+	flex-direction: column;
+
+	background-image: url(ljusProfilJan2.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment:fixed;	
+	height: 100vh;
+}
+
+
+.center-content{
+	width: 500px;
+	color: white;
+	letter-spacing: 1px;
+	margin: auto;
+	text-align: center;
+	padding: 0px 10px 10px 10px;
+}
+
+#description{
+	margin-bottom: 10px;
+}
+
+#contactText{
+	padding-bottom: 6px;
+}
+
+.center-content h4{
+	margin-top: -2px;
+	margin-bottom: 25px;
+}
+
+.center-content a{
+	font-weight: bold;
+}
+
+.center-content h1{
+	margin-bottom: 0px;
+	font-size: 84px;
+	font-style: italic;
+	font-weight: 900;
+	text-align: center;
+}
+
+.projectsContainer{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	display: flex;
+	background-color: grey;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-direction: column;
+	background-color: #e9ebee;
+}
+
+.projectsContainer h1{
+	font-size: 62px;
+}
+
+.projImage {
+	width: 100%;
+	background-color: orange;
+}
+
+.rowcontainer{			
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-flex-flow: wrap;	
+	flex-flow: wrap;
+	flex-direction: row;
+
+	margin-bottom: 20px;
+	background-color: white;
+	max-width: 640px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+
+.rowcontainer:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.item{
+	max-width: 300px;
+	margin: 10px 8px 4px 8px;
+}
+
+.linkContainer{
+	align-self: flex-end;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: wrap;
+	flex-flow: wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+
+	margin: 10px 20px 12px 20px;
+	padding-top: 20px;	
+	padding-bottom: 20px;
+	border-top: 3px solid #DCDCDC;
+	width: 100%;
+}
+
+.linkItem{
+	border: 2px #F5F5F5 solid;
+	border-radius: 5px;
+	background-color: #F1F1F1;
+	padding: 2px;
+	margin: 2px;
+	font-weight: 700;
+	letter-spacing: 2px;
+
+
+}
+
+.linkItem:hover{
+
+	color: #66cccc;
+}
+
+@media (max-width: 684px) {
+	.rowcontainer{
+		max-width: 360px;
+	}
+
+}
+
+
+.rowcontainer.noshadow{
+	
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-color: #e9ebee;	
+}
+
+
+.container2{
+	background: #c65353;
+	color: #bdbdbd;
+	padding-bottom: 20px;
+}
+
+.rowcontainer h1{
+	color: #555555;
+	font-weight: 700;
+}
+
+.item h2{
+	margin-top: 3px;
+	color: #333333;
+}
+
+.item p{
+	color: #666666;
+}
+
+
+/* Add a dark background color to the footer */
+footer {
+	display: flex;
+	background-color: #2d2d30;
+	color: #f5f5f5;
+	padding: 30px 30px 60px 30px;	
+	height: 100%;
+	text-align: center;
+}
+
+footer p {
+	max-width: 500px;
+	margin:auto;
+}
+
+footer a {
+	color: #f5f5f5;
+}
+
+footer a:hover {
+	color: #66cccc;
+	text-decoration: none;
+}
+
+
+#send-button:hover{
+	background: #66cccc;
+
+}
+
+#contact{
+	color: white;
+}
+
+
+
+@media (max-width: 768px) {
+
+	.projectsContainer{		
+		margin:auto;
+	}
+
+	.projectsContainer h1{
+		font-size: 34px;
+	}
+
+	.menuRightside{
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+
+	}
+
+	.menu-container{
+		height: 0px;
+		/* This aligns items to the end line on main-axis */
+	}
+
+	.menu{    	
+		bottom: 0;
+		position: fixed;
+		text-align: center;
+
+		font-size: 3.2vw !important;
+		letter-spacing: 2px;I
+	}
+
+	.center-content{
+		width: 94%;
+	}
+
+	.center-content h1{
+		font-size: 10vw;
+	}
+
+	.center-content h4{
+		font-size: 4.6vw;
+	}
+
+	.center-content p{
+		font-size: 3.6vw;
+	}
+
+	#description{
+		display: none;
+	}
+
+	.logo{
+		display: none;
+	}
+
+	.hero-image{
+
+		background-image: url("ljusProfilJan2standing.jpg");
+
+	}
+}
+
+@media (max-width: 689px) {
+
+	.rowcontainer{
+		max-width: 360px;
+
+	}
+
+}
+
+@media (max-width: 400px) {
+
+	.projectsContainer{
+		padding-right: 8px;
+		padding-left: 8px;
+
+	}
+
+}
