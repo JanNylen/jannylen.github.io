@@ -1,6 +1,4 @@
 * {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 	line-height: 1.6;
 
@@ -8,6 +6,10 @@
 	-moz-osx-font-smoothing: grayscale;	
 
 	font-family: Montserrat, sans-serif;
+}
+
+body, html {
+	font-size: .875rem;
 }
 
 h1, h2, h3, h4, h5 {
@@ -183,6 +185,11 @@ h1, h2, h3, h4, h5 {
 	color: #66cccc;
 }
 
+.linkItem a:hover{
+	background-color: #555555;
+	color: #52a5a5;
+}
+
 @media (max-width: 684px) {
 	.rowcontainer{
 		max-width: 360px;
@@ -285,7 +292,7 @@ footer a:hover {
 		text-align: center;
 
 		font-size: 3.2vw !important;
-		letter-spacing: 2px;I
+		letter-spacing: 2px;
 	}
 
 	.center-content{
@@ -313,9 +320,7 @@ footer a:hover {
 	}
 
 	.hero-image{
-
 		background-image: url("ljusProfilJan2standing.jpg");
-
 	}
 }
 

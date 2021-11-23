@@ -9,14 +9,15 @@
 
 	<link rel='stylesheet' href='styles.css' />
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 
 
 
@@ -45,11 +46,6 @@
 					});
 				} // End if 
 			});
-		})
-
-		$(document).ready(function () {
-			// Initialize Tooltip
-			$('[data-toggle="tooltip"]').tooltip();
 		})
 	</script>
 
@@ -114,7 +110,7 @@
 
 			<div class="item">
 				<h2>CGI 2018-2021</h2>
-				<img src="meanConnectivity2.png" class="projImage" alt="An image of the research data visualization">
+				<img src="unifiedportal.png" class="projImage" alt="An image of the research data visualization">
 			</div>
 
 			<div class="item">
@@ -127,9 +123,8 @@
 						the first version of the UI was released. </p>
 					<p> A set of problem areas to focus on were defined and a
 						design process was started to iteratively reach a new design with the help of prototypes and
-						user tests. Most of the UX-work was based on previous knowledge and a series of UX interviews
-						held at the
-						start of the year. </p>
+						user tests. Most of the UX-work was based on previous support issues and a series of UX interviews
+						held at the start of the year. </p>
 				</div>
 			</div>
 
@@ -148,13 +143,13 @@
 
 			<div class="item">
 				<h2>CGI 2020</h2>
-				<img src="meanConnectivity2.png" class="projImage" alt="An image of the research data visualization">
+				<img src="MainDashboard.png" class="projImage" alt="An image of the research data visualization">
 			</div>
 
 			<div class="item">
 				<h4>Core Team</h4>
 				<div class="person-text" alt="Random Name">
-					<p>As a UX-Designer Jan designed and prototyped a devOps web application. The application’s purpose
+					<p>As a UX-Designer I designed and prototyped a devOps web application. The application’s purpose
 						was to give clients an overview and point of entry for a set of services hosted and offered to
 						clients by Core team.</p>
 					<p>During the project I interviewed the members of Core team regarding the
@@ -195,10 +190,11 @@
 			<div class="linkContainer">
 				<div class="linkItem">Frontend</div>
 				<div class="linkItem">UX-design</div>
-				<div class="linkItem">Visualization</div>
+				<div class="linkItem">Data Visualization</div>
+				<div class="linkItem">Student</div>
 				<div class="linkItem"><a
 						href="http://umu.diva-portal.org/smash/record.jsf?dswid=365&pid=diva2%3A1152979&c=15&searchType=SIMPLE&language=sv&query=interaktion+och+design&af=%5B%22dateIssued%3A2017%22%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all"
-						style="color: #66cccc ">Link</a></div>
+						style="color: #52a5a5 ">Thesis Link</a></div>
 			</div>
 		</article>
 
@@ -223,6 +219,7 @@
 				<div class="linkItem">Prototyping</div>
 				<div class="linkItem">Axure</div>
 				<div class="linkItem">Redesign</div>
+				<div class="linkItem">Student</div>
 			</div>
 
 		</article>
@@ -249,6 +246,7 @@
 				<div class="linkItem">Frontend</div>
 				<div class="linkItem">User studies</div>
 				<div class="linkItem">UX</div>
+				<div class="linkItem">Student</div>
 			</div>
 
 		</article>
@@ -256,24 +254,25 @@
 
 	<div class="container2">
 
-		<div class="container" id="contact">
+		<div class="container py-3" id="contact">
 			<h3 class="text-center">Contact</h3>
-			<p class="text-center"><em>I'll get back to you!</em></p>
-			<div class="col-md-4 m-auto">
-				<p><span class="glyphicon glyphicon-map-marker"></span> Umea, SWE</p>
-				<p><span class="glyphicon glyphicon-phone"></span> +46 702874488</p>
-				<p><span class="glyphicon glyphicon-envelope"></span> <a style="color: #fff" href="mailto:jan.nylen92@gmail.com">jan.nylen92@gmail.com</a></p>
-			</div>
+			<address class="text-center">
+				<p><span class="bi bi-envelope-fill pr-1"></span> <a style="color: #fff"
+						href="mailto:jan.nylen92@gmail.com">jan.nylen92@gmail.com</a></p>
+				<p><span class="bi bi-phone-fill pr-1"></span> +46 702874488</p>
+				<p><span class="bi bi-map-fill pr-1"></span> Umea, SWE</p>
+				<p class="text-center"><em>I'll get back to you!</em></p>
+			</address>
 		</div>
 
 	</div>
 
-	<footer class="myFooter">
+	<footer class="myFooter flex-column">
 
-		<a class="up-arrow" href="#home" data-toggle="tooltip" title="Up, up... and away!">
-			<span class="glyphicon glyphicon-chevron-up"></span>
-		</a><br><br>
-		<p>I aim to constantly develop myself and my environment by looking for and experiencing new challenges within
+		<a class="up-arrow" href="#home" title="Up, up... and away!">
+			<span class="bi bi-arrow-up-square"></span>
+		</a><br>
+		<p>I aim to constantly improve myself and my environment by looking for and experiencing new challenges within
 			areas that are, or can become, a passion. I am a big proponent for analytical user centered design. While
 			this might at times take a lot of time I feel it is necessary to reliably achieve successful results.
 		</p>
