@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset='UTF-8'/>
+	<meta charset='UTF-8' />
 
 	<meta name="viewport" content="width=devuce-width, initial-scale=1">
-	<title>My flex test</title>	
+	<title>My flex test</title>
 
-	<link rel='stylesheet' href='styles.css'/>
+	<link rel='stylesheet' href='styles.css' />
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -20,41 +21,42 @@
 
 
 	<script>
-		$(document).ready(function(){
-      // Add smooth scrolling to all links in menu + footer and text link
-      $(".center-content a, .menu a, footer a, [href='#myPage']").on('click', function(event) {
+		$(document).ready(function () {
+			// Add smooth scrolling to all links in menu + footer and text link
+			$(".center-content a, .menu a, footer a, [href='#myPage']").on('click', function (event) {
 
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
 
-        // Prevent default anchor click behavior
-        event.preventDefault();
+					// Prevent default anchor click behavior
+					event.preventDefault();
 
-        // Store hash
-        var hash = this.hash;
+					// Store hash
+					var hash = this.hash;
 
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-        	scrollTop: $(hash).offset().top
-        }, 800, function(){
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function () {
 
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-      });
-        } // End if 
-    });
-  })
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;
+					});
+				} // End if 
+			});
+		})
 
-		$(document).ready(function(){
-      // Initialize Tooltip
-      $('[data-toggle="tooltip"]').tooltip(); 
-  })
-</script>
+		$(document).ready(function () {
+			// Initialize Tooltip
+			$('[data-toggle="tooltip"]').tooltip();
+		})
+	</script>
 
 </head>
+
 <body>
-<!--
+	<!--
 	<div class="menu-container">
 		<div class="menu">
 			<div class='date'>Aug 14, 2016</div>
@@ -63,155 +65,224 @@
 		</div>
 	</div>-->
 
-	<header class="hero-image"  id="home">
+	<header class="hero-image" id="home">
 
 		<div class="menu-container">
 			<div class="menu">
 				<div class='logo'><a href="#home">JAN NYLÈN</a></div>
-				<div class="menuRightside">					
+				<div class="menuRightside">
 					<div class='home'><a href="#home">ABOUT ME</a></div>
 					<div class='projects'><a href="#projects">PROJECTS</a></div>
 					<div class='contact'><a href="#contact">CONTACT</a></div>
-					<div class="CV"><a href="jannylencv2017.PDF">CV</a></div>	
+					<div class="CV"><a href="jannylencv2017.PDF">CV</a></div>
 				</div>
 			</div>
-		</div>		
+		</div>
 
 		<div class="center-content">
 
 			<div>
 
-				<div class="centerContentLogo">			
+				<div class="centerContentLogo">
 					<h1>Jan Nylén</h1>
 					<h4>Frontend developer and UX-designer</h4>
 				</div>
 
-				<p id="description">Hi, I am a 25 year old engineer from Northern Sweden. In 2017 I got my masters degree in Engineering in Interaction Technology and Design at Umea University and now I'm looking for an inspiring workplace to meet some cool people and further improve my design and coding skills.
+				<p id="description">Hi, I am a UX-engineer from Northern Sweden. In 2017 I got my masters
+					degree in Engineering in Interaction Technology and Design at Umea University. Since finishing my
+					studies I have been working at <a style="color: #66cccc" href="https://www.cgi.com/en">CGI</a> with
+					UI and UX in a cross functional product team.
 				</p>
 
-			<!--<p>I aim to constantly develop myself and my environment by looking for and experiencing new challenges within areas that are, or can become, a passion. I am a big proponent for analytical user centered design. While this might at times take a lot of time I feel it is necessary to reliably achieve successful results.
+				<!--<p>I aim to constantly develop myself and my environment by looking for and experiencing new challenges within areas that are, or can become, a passion. I am a big proponent for analytical user centered design. While this might at times take a lot of time I feel it is necessary to reliably achieve successful results.
 			</p>-->
-			<p id="contactText">
-				Contact me <a href="#contact" style="color: #66cccc ">here</a> or check out some of my <a href="#projects" style="color: #66cccc ">projects</a> if you are interested in working with me.
-			</p>
+				<p id="contactText">
+					Contact me <a href="#contact" style="color: #66cccc ">here</a> or check out some of my <a
+						href="#projects" style="color: #66cccc ">projects</a> if you want to get in touch.
+				</p>
+			</div>
 		</div>
-	</div>	
-</header>
+	</header>
 
-<div class="projectsContainer"  id="projects">
+	<div class="projectsContainer" id="projects">
 
-	<div class="rowcontainer noshadow">
-		<h1>Selected Projects</h1>
-	</div>
-
-	<div class="rowcontainer">
-
-		<div class="item">
-			<h2>Master Thesis</h2>
-			<img src="meanConnectivity2.png" class="projImage" alt="An image of the research data visualization">
+		<div class="rowcontainer noshadow">
+			<h1>Selected Projects</h1>
 		</div>
 
-		<div class="item">
-			<h4>Visualizing Neuroscientific Data</h4>
-			<div class="person-text" alt="Random Name"><p>Based on my interest for psychology and especially cognition I looked for a master thesis close to cognitive sciences. I got the opportunity to work together with a neuro cognitive research group to explore how to achieve an efficient and user friendly way of working with the multitude of datasets that their research generated. During the thesis I studied their data, iteratively interviewed the researchers, developed visualization prototypes and performed think aloud user tests. </p> </div>
-		</div>
+		<article class="rowcontainer">
 
-		<div class="linkContainer">		
-			<div class="linkItem">Frontend</div>		
-			<div class="linkItem">UX-design</div>				
-			<div class="linkItem">Visualization</div>
-			<div class="linkItem"><a href="http://umu.diva-portal.org/smash/record.jsf?dswid=365&pid=diva2%3A1152979&c=15&searchType=SIMPLE&language=sv&query=interaktion+och+design&af=%5B%22dateIssued%3A2017%22%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all" style="color: #66cccc ">Link</a></div>				
-		</div>
+			<div class="item">
+				<h2>CGI 2018-2021</h2>
+				<img src="meanConnectivity2.png" class="projImage" alt="An image of the research data visualization">
+			</div>
 
-
-	</div>
-
-	<div class="rowcontainer">
-		<div class="item">
-			<h2>SVT-play</h2>
-			<img src="svtPlay.jpg" class="projImage" alt="An image of one of the views in the prototype">
-		</div>
-		<div class="item">
-			<h4>Watching TV Together</h4>
-			<div class="person-text" alt="Random Name"><p>In a course on prototype development for mobile applications we worked together with swedish public television (SVT) on a project to redesign their website SVT-play based on the way that television would be watched in the future. With our final concept and hi-fi prototype we combined the previous mobile web application with built-in communication services to allow for watching TV together without the need of being at the same place.   </p> </div>
-		</div>
-
-
-		<div class="linkContainer">		
-			<div class="linkItem">Prototyping</div>		
-			<div class="linkItem">Axure</div>				
-			<div class="linkItem">Redesign</div>				
-		</div>
-
-	</div>
-
-	<div class="rowcontainer">
-
-		<div class="item">
-			<h2>MillVid</h2>
-			<img src="millvid.jpg" class="projImage" alt="An image showcasing the webbapp on a pc ">
-		</div>
-
-		<div class="item">
-			<h4>Webbased Videogeneration</h4><div class="person-text" alt="Random Name"><p>During the MillVid-project me and some fellow students worked together with Umea based IT-company Codemill to create an interactive webservice for small companies to use. We explored and developed a web based prototype and user interface for creating productvideos from uploaded images and javascript animations.</p> </div>
-		</div>
-
-
-		<div class="linkContainer">		
-			<div class="linkItem">Frontend</div>		
-			<div class="linkItem">User studies</div>				
-			<div class="linkItem">UX</div>								
-		</div>
-
-	</div>
-
-
-	
-
-</div>
-
-<div class="container2">
-
-	<div class="container" id="contact">
-		<h3 class="text-center">Contact</h3>
-		<p class="text-center"><em>I'll get back to you!</em></p>
-		<div class="col-md-4">
-			<p><span class="glyphicon glyphicon-map-marker"></span> Umea, SWE</p>
-			<p><span class="glyphicon glyphicon-phone"></span> +46 702874488</p>
-			<p><span class="glyphicon glyphicon-envelope"></span> jan.nylen92@gmail.com</p> 
-		</div>
-		<div class="col-md-8">
-			<div class="row">
-				<div class="col-sm-6 form-group">
-					<input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-				</div>
-				<div class="col-sm-6 form-group">
-					<input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+			<div class="item">
+				<h4>Unified Portal</h4>
+				<div class="person-text" alt="Random Name">
+					<p>As a frontend developer and UX-Designer I worked with designing new features in Unified Portal
+						and implementing them with Knockout.js and vue.js. Throughout 2019 I also took the lead on
+						a UI/UX revamp of the portal. The purpose was to improve upon the problems that had been
+						discovered since
+						the first version of the UI was released. </p>
+					<p> A set of problem areas to focus on were defined and a
+						design process was started to iteratively reach a new design with the help of prototypes and
+						user tests. Most of the UX-work was based on previous knowledge and a series of UX interviews
+						held at the
+						start of the year. </p>
 				</div>
 			</div>
-			<textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-			<div class="row">
-				<div class="col-md-12 form-group">
-					<button class="btn pull-right" id="send-button" type="submit">Send</button>
+
+			<div class="linkContainer">
+				<div class="linkItem">Frontend</div>
+				<div class="linkItem">UX-design</div>
+				<div class="linkItem">UI-design</div>
+				<div class="linkItem">Vue.js</div>
+				<div class="linkItem">SCSS</div>
+				<div class="linkItem">Prototyping</div>
+				<div class="linkItem">Figma</div>
+			</div>
+		</article>
+
+		<article class="rowcontainer">
+
+			<div class="item">
+				<h2>CGI 2020</h2>
+				<img src="meanConnectivity2.png" class="projImage" alt="An image of the research data visualization">
+			</div>
+
+			<div class="item">
+				<h4>Core Team</h4>
+				<div class="person-text" alt="Random Name">
+					<p>As a UX-Designer Jan designed and prototyped a devOps web application. The application’s purpose
+						was to give clients an overview and point of entry for a set of services hosted and offered to
+						clients by Core team.</p>
+					<p>During the project I interviewed the members of Core team regarding the
+						functionality and purpose of each of their services, worked on defining their user base, and
+						iteratively designed and created a high-fidelity prototype in Figma to act as a reference for
+						the team during development. </p>
 				</div>
-			</div> 
-		</div>
+			</div>
+
+			<div class="linkContainer">
+				<div class="linkItem">UX-design</div>
+				<div class="linkItem">Interviews</div>
+				<div class="linkItem">UI-design</div>
+				<div class="linkItem">Prototyping</div>
+				<div class="linkItem">Figma</div>
+			</div>
+		</article>
+
+		<article class="rowcontainer">
+
+			<div class="item">
+				<h2>Master Thesis</h2>
+				<img src="meanConnectivity2.png" class="projImage" alt="An image of the research data visualization">
+			</div>
+
+			<div class="item">
+				<h4>Visualizing Neuroscientific Data</h4>
+				<div class="person-text" alt="Random Name">
+					<p>Based on my interest for psychology and especially cognition I looked for a master thesis close
+						to cognitive sciences. I got the opportunity to work together with a neuro cognitive research
+						group to explore how to achieve an efficient and user friendly way of working with the multitude
+						of datasets that their research generated. During the thesis I studied their data, iteratively
+						interviewed the researchers, developed visualization prototypes and performed think aloud user
+						tests. </p>
+				</div>
+			</div>
+
+			<div class="linkContainer">
+				<div class="linkItem">Frontend</div>
+				<div class="linkItem">UX-design</div>
+				<div class="linkItem">Visualization</div>
+				<div class="linkItem"><a
+						href="http://umu.diva-portal.org/smash/record.jsf?dswid=365&pid=diva2%3A1152979&c=15&searchType=SIMPLE&language=sv&query=interaktion+och+design&af=%5B%22dateIssued%3A2017%22%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all"
+						style="color: #66cccc ">Link</a></div>
+			</div>
+		</article>
+
+		<article class="rowcontainer">
+			<div class="item">
+				<h2>SVT-play</h2>
+				<img src="svtPlay.jpg" class="projImage" alt="An image of one of the views in the prototype">
+			</div>
+			<div class="item">
+				<h4>Watching TV Together</h4>
+				<div class="person-text" alt="Random Name">
+					<p>In a course on prototype development for mobile applications we worked together with swedish
+						public television (SVT) on a project to redesign their website SVT-play based on the way that
+						television would be watched in the future. With our final concept and hi-fi prototype we
+						combined the previous mobile web application with built-in communication services to allow for
+						watching TV together without the need of being at the same place. </p>
+				</div>
+			</div>
+
+
+			<div class="linkContainer">
+				<div class="linkItem">Prototyping</div>
+				<div class="linkItem">Axure</div>
+				<div class="linkItem">Redesign</div>
+			</div>
+
+		</article>
+
+		<article class="rowcontainer">
+
+			<div class="item">
+				<h2>MillVid</h2>
+				<img src="millvid.jpg" class="projImage" alt="An image showcasing the webbapp on a pc ">
+			</div>
+
+			<div class="item">
+				<h4>Webbased Videogeneration</h4>
+				<div class="person-text" alt="Random Name">
+					<p>During the MillVid-project me and some fellow students worked together with Umea based IT-company
+						Codemill to create an interactive webservice for small companies to use. We explored and
+						developed a web based prototype and user interface for creating productvideos from uploaded
+						images and javascript animations.</p>
+				</div>
+			</div>
+
+
+			<div class="linkContainer">
+				<div class="linkItem">Frontend</div>
+				<div class="linkItem">User studies</div>
+				<div class="linkItem">UX</div>
+			</div>
+
+		</article>
 	</div>
 
-</div>
+	<div class="container2">
 
-<footer class="myFooter">
+		<div class="container" id="contact">
+			<h3 class="text-center">Contact</h3>
+			<p class="text-center"><em>I'll get back to you!</em></p>
+			<div class="col-md-4 m-auto">
+				<p><span class="glyphicon glyphicon-map-marker"></span> Umea, SWE</p>
+				<p><span class="glyphicon glyphicon-phone"></span> +46 702874488</p>
+				<p><span class="glyphicon glyphicon-envelope"></span> <a style="color: #fff" href="mailto:jan.nylen92@gmail.com">jan.nylen92@gmail.com</a></p>
+			</div>
+		</div>
 
-	<a class="up-arrow" href="#home" data-toggle="tooltip" title="Up, up... and away!">
-		<span class="glyphicon glyphicon-chevron-up"></span>
-	</a><br><br>
-	<p>I aim to constantly develop myself and my environment by looking for and experiencing new challenges within areas that are, or can become, a passion. I am a big proponent for analytical user centered design. While this might at times take a lot of time I feel it is necessary to reliably achieve successful results.
-	</p>
-	<br>
-	<p>All the best, Jan</p>
-</footer>
+	</div>
+
+	<footer class="myFooter">
+
+		<a class="up-arrow" href="#home" data-toggle="tooltip" title="Up, up... and away!">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a><br><br>
+		<p>I aim to constantly develop myself and my environment by looking for and experiencing new challenges within
+			areas that are, or can become, a passion. I am a big proponent for analytical user centered design. While
+			this might at times take a lot of time I feel it is necessary to reliably achieve successful results.
+		</p>
+		<br>
+		<p>All the best, Jan</p>
+	</footer>
 
 
 
 </body>
+
 </html>
