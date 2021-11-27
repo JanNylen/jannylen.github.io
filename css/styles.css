@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5 {
 	justify-content: center;	
 	flex-direction: column;
 
-	background-image: url(ljusProfilJan2.jpg);
+	background-image: url("../images/ljusProfilJan2.jpg");
 	background-size: cover;
 	background-position: center;
 	background-attachment:fixed;	
@@ -320,7 +320,7 @@ footer a:hover {
 	}
 
 	.hero-image{
-		background-image: url("ljusProfilJan2standing.jpg");
+		background-image: url("../images/ljusProfilJan2standing.jpg");
 	}
 }
 
