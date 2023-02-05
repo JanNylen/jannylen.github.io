@@ -4,47 +4,49 @@
 <head>
 	<meta charset='UTF-8' />
 
-	<meta name="viewport" content="width=devuce-width, initial-scale=1">
-	<title>Jan Nylen Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Jan Nylén Portfolio</title>
 
 	<link rel='stylesheet' href='css/styles.css' />
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-
-
+	<link href="https://fonts.googleapis.com/earlyaccess/opensanshebrew.css" rel="stylesheet">
 
 	<script>
-		$(document).ready(function () {
+		window.onload = (function () {
 			// Add smooth scrolling to all links in menu + footer and text link
-			$(".center-content a, .menu a, footer a, [href='#myPage']").on('click', function (event) {
+			document
+				.querySelectorAll('a[href^="#"]')
+				.forEach(trigger => {
+					trigger.onclick = function (e) {
+						e.preventDefault();
+						let hash = this.getAttribute('href');
+						let target = document.querySelector(hash);
+						let headerOffset = 0;
+						let elementPosition = target.offsetTop;
+						let offsetPosition = elementPosition - headerOffset;
 
-				// Make sure this.hash has a value before overriding default behavior
-				if (this.hash !== "") {
+						window.scrollTo({
+							top: offsetPosition,
+							behavior: "smooth"
+						});
+					};
+				});
+		});
 
-					// Prevent default anchor click behavior
-					event.preventDefault();
+		function changeClass(clickedElement) {
+			const menuItems = document.getElementsByClassName('menu-item');
 
-					// Store hash
-					var hash = this.hash;
+			if (!menuItems) {
+				return;
+			}
 
-					// Using jQuery's animate() method to add smooth page scroll
-					// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-					$('html, body').animate({
-						scrollTop: $(hash).offset().top
-					}, 500, function () {
-
-						// Add hash (#) to URL when done scrolling (default click behavior)
-						window.location.hash = hash;
-					});
-				} // End if 
-			});
-		})
+			for (let item of menuItems) {
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace("active", "");
+				clickedElement.className += " active";
+			}
+		}
 	</script>
 
 </head>
@@ -52,76 +54,109 @@
 <body>
 	<header class="hero-image" id="home">
 
-		<div class="menu-container">
-			<div class="menu">
-				<div class='logo'><a href="#home">JAN NYLÈN</a></div>
-				<div class="menuRightside">
-					<div class='home'><a href="#home">ABOUT ME</a></div>
-					<div class='projects'><a href="#projects">PROJECTS</a></div>
-					<div class='contact'><a href="#contact">CONTACT</a></div>
-					<div class="CV"><a href="pdfs/jannylenCV.pdf" target="_blank">CV</a></div>
+		<div class="main-wrapper">
+
+			<div class="center-content">
+				<div class="flex-between">
+					<!-- <div class='menu-item menu-item-logo'><a href="#home">JAN NYLÈN</a></div> -->
+					<nav class="menu-container">
+						<ol class="menu">
+							<!-- <li onclick="changeClass(this)" class='menu-item menu-item-home active'><a class="menu-link"
+									href="#home">Home</a></li> -->
+							<li onclick="changeClass(this)" class='menu-item menu-item-projects'><a class="menu-link"
+									href="#projects">Projects</a></li>
+							<li onclick="changeClass(this)" class='menu-item menu-item-contact'><a class="menu-link"
+									href="#contact">Contact</a></li>
+							<!-- <li onclick="changeClass(this)" class="menu-item menu-item-CV"><a class="menu-link"
+									href="pdfs/jannylenCV.pdf" target="_blank">CV</a></li> -->
+						</ol>
+					</nav>
+					<div class="center-content-logo">
+						<h1 class="center-content-title">Jan Nylén</h1>
+						<h2 class="center-content-subtitle">Developer & </br> Designer</h2>
+					</div>
 				</div>
+				<div class="flex-between">
+					<div class="center-content-text">
+						<p id="description">Quality design through efficient communication
+							& execution
+						</p>
+						<p id="contactText">
+							Check out some of <a href="#projects">my projects</a>
+						</p>
+
+						<!-- and let me know if you want to <a href="#contact">get in touch</a> -->
+					</div>
+					<h2 class="projects-title">My Projects</h2>
+				</div>
+
 			</div>
+
 		</div>
 
-		<div class="center-content">
-			<div>
-				<div class="centerContentLogo">
-					<h1>Jan Nylén</h1>
-					<h3>Frontend developer and designer</h3>
-				</div>
-
-				<p id="description">Focused on bringing quality design through efficient communication and execution in
-					cross-functional teams
-				</p>
-
-				<!--<p>I aim to constantly develop myself and my environment by looking for and experiencing new challenges within areas that are, or can become, a passion. I am a big proponent for analytical user centered design. While this might at times take a lot of time I feel it is necessary to reliably achieve successful results.
-			</p>-->
-				<p id="contactText">
-					Check out some of my <a href="#projects" style="color: #66cccc ">projects</a> and let me know if you
-					want to <a href="#contact" style="color: #66cccc ">get in touch</a>
-				</p>
-			</div>
-		</div>
 	</header>
 
 	<div class="projectsContainer" id="projects">
 
-		<div class="rowcontainer noshadow">
-			<h1 class="projects-title">Selected Projects</h1>
-		</div>
+
 
 		<article class="rowcontainer">
 
 			<div class="item">
-				<h2 class="item-header">CGI 2018-2021</h2>
+				<h3 class="item-header">CGI 2018-2023</h3>
 				<img src="images/unifiedportal.png" class="projImage" alt="An image of the research data visualization">
 			</div>
 
-			<div class="item">
+			<div class="item item-text align-text-right">
 				<h3 class="item-header">Customer Support Portal</h3>
 				<div class="person-text" alt="Random Name">
 					<p>As a frontend developer and UX-Designer I worked with designing new features for a customer
-						portal
-						and implementing them with Knockout.js and vue.js. Throughout 2019 I also took the lead on
-						a UI/UX revamp of the portal. The purpose was to improve upon the problems that had been
-						discovered since
-						the first version of the UI was released. </p>
-					<p> A set of problem areas to focus on were defined and a
-						design process was started to iteratively reach a new design with the help of prototypes and
-						user tests. Most of the initial ideation and UX-work was based on previous support issues and a
-						series of UX
-						interviews
-						held at the start of the year. </p>
+						portal and implementing them with Knockout.js and vue.js.
+						Throughout 2019 I also took the lead on a UI/UX revamp of
+						the portal. The purpose was to improve upon the problems
+						that had been discovered since the first version of the UI was released. </p>
+					<p> I set out to find out which the most valuable areas to focus on were and started an
+						iterative design process to reach a new design. This was done throught interview, user tests,
+						and
+						a variety of concepts and prototypes. Most of the initial ideation and UX-work was
+						based on previous support issues and a series of UX interviews held at the start of the year.
+					</p>
 				</div>
 			</div>
 
-			<div class="linkContainer">
+			<div class="tag-container">
 				<div class="tag">Frontend</div>
-				<div class="tag">UX-design</div>
-				<div class="tag">UI-design</div>
 				<div class="tag">Vue.js</div>
 				<div class="tag">SCSS</div>
+				<div class="tag">UX-design</div>
+				<div class="tag">UI-design</div>
+				<div class="tag">Prototyping</div>
+				<div class="tag">Figma</div>
+				<div class="tag">Access Control</div>
+			</div>
+		</article>
+
+		<article class="rowcontainer">
+
+			<div class="item">
+				<h3 class="item-header">CGI 2022</h3>
+				<img src="https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png"
+					class="projImage" alt="An image of the research data visualization">
+			</div>
+
+			<div class="item item-text align-text-right">
+				<h3 class="item-header">CGI Access Control</h3>
+				<div class="person-text" alt="Random Name">
+					<p></p>
+				</div>
+			</div>
+
+			<div class="tag-container">
+				<div class="tag">Frontend</div>
+				<div class="tag">Vue.js</div>
+				<div class="tag">SCSS</div>
+				<div class="tag">UX-design</div>
+				<div class="tag">UI-design</div>
 				<div class="tag">Prototyping</div>
 				<div class="tag">Figma</div>
 			</div>
@@ -130,24 +165,105 @@
 		<article class="rowcontainer">
 
 			<div class="item">
-				<h2 class="item-header">CGI 2020</h2>
+				<h3 class="item-header">CGI 2022</h3>
+				<img src="https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png"
+					class="projImage" alt="An image of the research data visualization">
+			</div>
+
+			<div class="item item-text align-text-right">
+				<h3 class="item-header">MFA-Configurator</h3>
+				<div class="person-text" alt="Random Name">
+					<p>Multi-Factor-Authentication (MFA) has spread like wildfire
+						and have in its wake made our digital life a safer place.
+						Albeit, at the same time as securing our data it has also increased the complexity of user
+						onboarding processes.
+					<p> I spent most of my time on this project gaining an understanding of the
+						intricacies of MFA through interviews, articles, looking at what other similar
+						solutions have shared about their MFA-journeys,
+						and thereafter outlining what kind of impact it would have
+						on our onboarding.</p>
+					<p>After defining the pain points during the initial reaseach phase, I took figma in my
+						hands and created a number of concepts. Testing and tweaking with colleagues through the
+						processes and in the end
+						creating a full out hi-fi prototype.</p>
+					</p>
+
+					<p> The most interesting findings throughout this
+						process was actually how tentative and foreboding
+						the support team was about the introduction of
+						MFA. An at the end hearing their relief on how
+						relatively pain free the introduction in the end
+						was. While I hope that some of this was due to
+						our design process I also have to give credit to the users.
+						Despite the possible annoyance they were willing, and very
+						understanding of this new security measure.
+					</p>
+				</div>
+			</div>
+
+			<div class="tag-container">
+				<div class="tag">Branding</div>
+				<div class="tag">Redesign</div>
+				<div class="tag">Layout</div>
+				<div class="tag">User flows</div>
+				<div class="tag">Prototyping</div>
+				<div class="tag">Figma</div>
+			</div>
+		</article>
+
+		<article class="rowcontainer">
+
+			<div class="item">
+				<h3 class="item-header">2022</h3>
+				<img src="images/myportfolio.PNG" class="projImage" alt="An image of my portfolio landing page banner">
+			</div>
+
+			<div class="item item-text align-text-right">
+				<h3 class="item-header">My Portfolio</h3>
+				<div class="person-text">
+					<p> After having left my portfolio site unpublished and untouched for a
+						few years I set out on a redesign adventure. I maintained a lot
+						of the overall layout, but changed up the typography, color scheme and navigation.</p>
+					<p> </p>
+				</div>
+			</div>
+
+			<div class="tag-container">
+				<div class="tag">Frontend</div>
+				<div class="tag">Vue.js</div>
+				<div class="tag">SCSS</div>
+				<div class="tag">UX-design</div>
+				<div class="tag">UI-design</div>
+				<div class="tag">Prototyping</div>
+				<div class="tag">Figma</div>
+			</div>
+		</article>
+
+		<article class="rowcontainer">
+
+			<div class="item align-text-right">
+				<h3 class="item-header">CGI 2020</h3>
 				<img src="images/MainDashboard.png" class="projImage" alt="An image of the research data visualization">
 			</div>
 
-			<div class="item">
-				<h3 class="item-header">DevOps Web App</h3>
+			<div class="item item-text">
+				<h3 class="item-header">DevOps Web Application</h3>
 				<div class="person-text" alt="Random Name">
-					<p>As a UX-Designer I designed and prototyped a devOps web application. The application’s purpose
-						was to give clients an overview and point of entry for a set of services hosted and offered to
-						clients.</p>
-					<p>During the project I interviewed members of the service teams regarding the
-						functionality and purpose of each of their services, worked on defining their user base, and
-						iteratively designed and created a high-fidelity prototype in Figma to act as a reference for
+					<p>As a UX-Designer I designed and prototyped a devOps
+						web application. The application’s purpose
+						was to give clients an overview and point of entry
+						for a set of services hosted and offered by my company.</p>
+					<p>During the project I interviewed members of the
+						service teams regarding the
+						functionality and purpose of each of their services,
+						worked on defining their user base, and
+						iteratively designed and created a high-fidelity
+						prototype in Figma to act as a reference for
 						the team during development. </p>
 				</div>
 			</div>
 
-			<div class="linkContainer">
+			<div class="tag-container tag-container-odd">
 				<div class="tag">UX-design</div>
 				<div class="tag">Interviews</div>
 				<div class="tag">UI-design</div>
@@ -159,12 +275,12 @@
 		<article class="rowcontainer">
 
 			<div class="item">
-				<h2 class="item-header">Master Thesis</h2>
+				<h3 class="item-header">Master Thesis</h3>
 				<img src="images/meanConnectivity2.png" class="projImage"
 					alt="An image of the research data visualization">
 			</div>
 
-			<div class="item">
+			<div class="item item-text align-text-right">
 				<h3 class="item-header">Visualizing Neuroscientific Data</h3>
 				<div class="person-text" alt="Random Name">
 					<p>Based on my interest for psychology and especially cognition I looked for a master thesis close
@@ -176,23 +292,23 @@
 				</div>
 			</div>
 
-			<div class="linkContainer">
+			<div class="tag-container">
 				<div class="tag">Frontend</div>
 				<div class="tag">UX-design</div>
 				<div class="tag">Data Visualization</div>
 				<div class="tag">Student</div>
 				<div class="tag"><a
-						href="http://umu.diva-portal.org/smash/record.jsf?dswid=365&pid=diva2%3A1152979&c=15&searchType=SIMPLE&language=sv&query=interaktion+och+design&af=%5B%22dateIssued%3A2017%22%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all"
-						style="color: #52a5a5 ">Thesis Link</a></div>
+						href="http://umu.diva-portal.org/smash/record.jsf?dswid=365&pid=diva2%3A1152979&c=15&searchType=SIMPLE&language=sv&query=interaktion+och+design&af=%5B%22dateIssued%3A2017%22%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all">Thesis
+						Link</a></div>
 			</div>
 		</article>
 
-		<article class="rowcontainer">
-			<div class="item">
+		<!-- <article class="rowcontainer">
+			<div class="item align-text-right">
 				<h2 class="item-header">SVT-play</h2>
 				<img src="images/svtPlay.jpg" class="projImage" alt="An image of one of the views in the prototype">
 			</div>
-			<div class="item">
+			<div class="item item-text">
 				<h3 class="item-header">Watching TV Together</h3>
 				<div class="person-text" alt="Random Name">
 					<p>In a course on prototype development for mobile applications we worked together with swedish
@@ -203,67 +319,99 @@
 				</div>
 			</div>
 
-			<div class="linkContainer">
+			<div class="tag-container">
 				<div class="tag">Prototyping</div>
 				<div class="tag">Axure</div>
 				<div class="tag">Redesign</div>
 				<div class="tag">Student</div>
 			</div>
 
-		</article>
+		</article> -->
 
-		<article class="rowcontainer">
+		<!-- <article class="rowcontainer">
 
 			<div class="item">
-				<h2 class="item-header">MillVid</h2>
+				<h3 class="item-header">MillVid</h3>
 				<img src="images/millvid.jpg" class="projImage" alt="An image showcasing the webbapp on a pc ">
 			</div>
 
-			<div class="item">
+			<div class="item item-text align-text-right">
 				<h3 class="item-header">Webbased Videogeneration</h3>
 				<div class="person-text" alt="Random Name">
 					<p>During the MillVid-project me and some fellow students worked together with Umea based IT-company
-						Codemill to create an interactive webservice for small companies to use. We prepared an
-						interview
-						questionnaire, interviewed various employees at a few local companies, and went through several
-						design iterations based on the questionnaire results. Thereafter we explored and
+						Codemill to create an interactive webservice for small companies to use. During the project I
+						prepared an
+						interview questionnaire, interviewed various employees at a few local companies, and went
+						through several
+						design iterations based on the questionnaire results.</p>
+					<p>After the initial face of gathering information and gaining insights, me and my team explored and
 						developed a web based prototype and user interface for creating productvideos from uploaded
 						images and javascript animations.</p>
 				</div>
 			</div>
 
-			<div class="linkContainer">
+			<div class="tag-container tag-container-odd">
 				<div class="tag">Frontend</div>
 				<div class="tag">User studies</div>
 				<div class="tag">UX</div>
 				<div class="tag">Student</div>
 			</div>
 
-		</article>
+		</article> -->
 	</div>
 
 	<div class="container contact-container" id="contact">
 		<h2 class="contact-title align-content-center">Contact</h3>
-			<address class="contact-information align-content-center">
-				<p><span class="bi bi-envelope-fill pr-1"></span> <a style="color: #fff"
-						href="mailto:jan.nylen92@gmail.com">jan.nylen92@gmail.com</a></p>
-				<p><span class="bi bi-phone-fill pr-1"></span> +46 702874488</p>
-				<p><span class="bi bi-map-fill pr-1"></span> Umea, SWE</p>
-				<p><em>I'll get back to you!</em></p>
-			</address>
+			<div class="contact-body">
+				<address class="contact-information align-content-center">
+					<p> <a style="color: #fff" href="mailto:jan.nylen92@gmail.com">jan.nylen92@gmail.com</a></p>
+					<p><em>I'll get back to you!</em></p>
+				</address>
+				<form class="contact-form" action="mailto:jan.nylen92@gmail.com" method="POST"
+					enctype="multipart/form-data" name="EmailForm">
+					<label for="fname">Name</label>
+					<input type="text" id="fname" name="name" placeholder="Your name..">
+
+
+					<label for="subject">Subject</label>
+					<textarea id="subject" name="subject" placeholder="Something something something..."
+						style="height:200px"></textarea>
+
+					<input type="submit" value="Submit">
+				</form>
+			</div>
 	</div>
 
 	<footer class="myFooter flex-column">
-
-		<a class="up-arrow" href="#home" title="Up, up... and away!">
-			<span class="bi bi-arrow-up-square"></span>
-		</a><br>
-		<p>I aim to constantly improve myself and my environment by looking for and experiencing new challenges within
-			areas that are, or can become, a passion. I am a big proponent for analytical user centered design. While
-			this might at times take a lot of time I feel it is necessary to reliably achieve successful results.
-		</p>
-		<br>
-		<p>All the best, Jan</p>
+		<div class="container">
+			<h1 class="footer-title">What I Specialize in </h1>
+			<p>I have several years of experience as
+				a UX-designer and frontend lead on a large scale B2B solution together with a cross-functional team.
+				All the while moving from communicating with stakeholders, improving and adpating to needs, reviewing
+				existing functionality, and aligning existing and new features with each other.</p>
+			<p>My path has given me a pragmatic and practical understanding of what it means to maintain
+				a web-based application. From maintaining a design system and component based
+				architecture,
+				to accruing and scraping away design and technical debt, enabling efficient support processes, the
+				impact of
+				reliable (as well as unreliable...) tests, and most importantly; valuing iterations. A product is never
+				perfect, but iterations
+				inevitably brings you closer.</p>
+			</p>
+			<div class="tag-container-footer">
+				<div class="tag">Vue.js</div>
+				<div class="tag">Typescript</div>
+				<div class="tag">SCSS</div>
+				<div class="tag">User Experience</div>
+				<div class="tag">Product Design</div>
+				<div class="tag">Figma</div>
+			</div>
+			<div class="footer-icon cen">
+				<a class="up-arrow" href="#home" title="Up, up... and away!">
+					<span class="bi bi-arrow-up-square"></span>
+				</a><br>
+			</div>
+		</div>
 	</footer>
 </body>
 

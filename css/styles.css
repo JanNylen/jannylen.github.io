@@ -1,26 +1,54 @@
+:root {
+	--clr-primary: #66cccc;
+	--clr-primary-dark: #468C8C;	
+	--clr-primary-darkest: #264D4D;
+	--clr-secondary: #111111;
+	--clr-secondary-dark: #000;
+	--clr-white: #fff;
+	--clr-black: #000;
+	--clr-white-gray: #b5b5b5;
+	--clr-body-text: #999999;
+	--clr-darkest-bg: #111111;
+	--clr-dark-bg: #1B1B1B;
+	--shadow-dark: 0 1px 1px rgba(0,0,0,0.12), 
+	0 2px 2px rgba(0,0,0,0.12), 
+	0 4px 4px rgba(0,0,0,0.12), 
+	0 8px 8px rgba(0,0,0,0.12),
+	0 16px 16px rgba(0,0,0,0.12);
+  }
+
 * {
 	box-sizing: border-box;
-	line-height: 1.6;
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;	
 
-	font-family: Montserrat, sans-serif;
+	font-family: 'Open Sans Hebrew', serif;
 }
 
 body, html {
-	font-size: 1rem;
-	color: #8b8b8b;
+	font-size: 18px;
+	color: var(--clr-white);
+	background-color: var(--clr-dark-bg);
 	margin: 0px;
 }
 
+a {
+	color: var(--clr-primary);
+}
+
+a:hover {
+	color: var(--clr-secondary);	
+}
+
+
+
 h1, h2, h3, h4, h5 {
-	line-height: 1.2;
 	margin-top: 0px;
 }
 
 h1 {
-	font-size: 2.8rem;
+	font-size: 2.6rem;
 }
 
 h2 {
@@ -41,56 +69,133 @@ h5 {
 
 p {
 	margin-top: 0px;
+	color: var(--clr-body-text);
 	margin-bottom: 16px;
 }
 
+.align-text-right {
+	/* text-align: right; */
+}
+
+.align-text-center {
+	text-align: center;
+}
+
 /* Add a gray color to all navbar links */
-.menu{
+.menu {
 	display: flex;
 	align-items: center;
+	padding: 10px;	
+	margin: 0px;
+	list-style-type: none;	
+}
+
+.main-wrapper {
+	display: flex;
+	align-items: center;	
+	flex-direction: column;
 	justify-content: space-between;
-	font-size: 13px !important;
-	letter-spacing: 3px;	
-	height: 50px;
-	width: 100%;
-	background-color: rgba(0,0,0,0.6);
-	position: fixed;
-	padding: 5px 10px 5px 10px;	
-	box-shadow: 0px 0px 8px 0px black;
+	min-height: calc(100vh + 200px);
+	box-shadow: var(--shadow-dark);	
+	background-color: #1111119c;
+	padding: 0px 60px 0px 60px;
+	border-right: .1px solid;
+	border-image: linear-gradient(20deg, var(--clr-primary-darkest), var(--clr-darkest-bg)) 50;
+	border-image-width: 100%;
+	margin-right: 20%;
+}
+
+.flex-between {
+	display: flex;
+	height: 50%;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#description {
+	color: var(--clr-white);
+}
+
+#contactText {
+	color: var(--clr-white);
+}
+
+
+
+.main-wrapper {
+	animation: fadeInAnimation ease 1.5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;	
+}
+
+@media (min-width: 768px) {
+	.center-content {
+		animation: widden ease 1.5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+}
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 0;
+	}
+	99% {
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes widden {
+	0% {
+		opacity: 0;
+		width: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .menu-container{
-	display: flex; 
-	height: 60px;
+	display: flex;
+	justify-content: center;
 	width: 100%;
+	overflow: hidden;
 	/* This aligns items to the end line on main-axis */
 }
 
-.menuRightside{
+.menu-right{
 	display: flex;	
 }
 
-.menu  a, .menu { 
-	color: #d5d5d5 !important;
-	padding: 5px 10px 5px 10px; 
+.menu-link { 
+	color: var(--clr-white) !important;
+	padding: 5px 20px 5px 20px; 
+	text-transform: uppercase;
 	text-decoration: none;
 }
 
 /* On hover, the links will turn white */
 .menu  a:hover {
-	color: #66cccc !important;
-	text-decoration: none;
+	color: var(--clr-secondary) !important;
+	text-decoration: underline;
 }
 
 /* The active link */
-.menu a:active {
-	color: #66cccc !important;
+.active a {
+	color: var(--clr-primary) !important;
 }
 
-.hero-image{
+.hero-image {
 	display: flex;
-	justify-content: center;	
-	flex-direction: column;
+	flex-direction: row-reverse;
 	background-image: url("../images/ljusProfilJan2.jpg");
 	background-size: cover;
 	background-position: center;
@@ -98,64 +203,78 @@ p {
 	height: 100vh;
 }
 
-.center-content{
-	width: 500px;
-	color: #f8f8f8;
-	letter-spacing: 1px;
-	margin: auto;
-	text-align: center;
-	padding: 0px 10px 10px 10px;
+.center-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+	width: 33vw;
+	min-width: 520px;
+	/* text-align: center; */
+	padding: 10px;
 }
 
-#description{
-	margin-bottom: 16px;
-}
-
-#contactText{
-	padding-bottom: 6px;
-}
-
-.center-content h4{
-	margin-top: -2px;
-	margin-bottom: 25px;
-}
-
-.center-content a{
+.center-content a {
 	font-weight: bold;
 }
 
-.center-content h1{
-	margin-bottom: 0px;
-	font-size: 84px;
-	font-style: italic;
-	font-weight: 900;
-	text-align: center;
+.center-content-text {
+	font-size: 1.3vw; /* Browsers that do not support "MIN () - MAX ()" and "Clamp ()" functions will take this value.*/
+    font-size: max(18px, min(1.3vw, 24px)); /* Browsers that do not support the "clamp ()" function will take this value. */
+    font-size: clamp(18px, 1.3vw, 24px);
+	margin-top: 14px;
 }
 
-.projectsContainer{
-	padding-top: 40px;
+.center-content-logo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+	/* text-align: center; */
+}
+
+.center-content-title {
+	margin-bottom: 0px;
+	font-size: 4.5vw; /* Browsers that do not support "MIN () - MAX ()" and "Clamp ()" functions will take this value.*/
+    font-size: max(64px, min(4.5vw, 150px)); /* Browsers that do not support the "clamp ()" function will take this value. */
+    font-size: clamp(64px, 4.5vw, 150px);
+	font-weight: 700;
+	/* text-align: center; */
+}
+
+.center-content-subtitle {
+    color: var(--clr-primary-darkest);
+    background-size: 100%;	
+	margin-bottom: 0px;
+	font-size: 3.5vw; /* Browsers that do not support "MIN () - MAX ()" and "Clamp ()" functions will take this value.*/
+    font-size: max(24px, min(1.3vw, 64px)); /* Browsers that do not support the "clamp ()" function will take this value. */
+    font-size: clamp(24px, 1.3vw, 64px);
+	font-weight: 700;
+	line-height: 1.2 !important;
+	text-align: right;
+}
+
+.projectsContainer {
+	padding-top: 240px;
 	padding-bottom: 40px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	flex-direction: column;
-	background-color: #1b1b1b;
-}
-
-.projectsContainer h1{
-	font-size: 62px;
+	background-color: var(--clr-dark-bg);
 }
 
 .projects-title {
-	margin-bottom: 0px;
+	text-align: center;	
+	font-size: 42px;
+	padding-bottom: 10px;
 }
 
 .projImage {
 	width: 100%;
-	background-color: orange;
 }
 
-.rowcontainer{			
+.rowcontainer {			
 	display: -webkit-flex;
 	display: flex;
 	-webkit-justify-content: center;
@@ -164,27 +283,41 @@ p {
 	flex-flow: wrap;
 	flex-direction: row;
 
-	margin-bottom: 80px;
-	background-color: #212121;
-	max-width: 720px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	margin-bottom: 120px;
+	max-width: 1020px;
     transition: 0.3s;
+	padding: 20px;
 }
 
-
-.rowcontainer:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.rowcontainer:nth-child(2n) {
+	flex-direction: row-reverse;
 }
 
-.item{
-	margin: 16px 24px;
+.tag-container-odd {
+	border-image: linear-gradient(45deg, var(--clr-secondary), var(--clr-primary)) 50 !important; 
 }
+
+.rowcontainer:hover .item-text {
+    box-shadow: none;
+}
+
+.item {
+	display: flex;
+    flex-direction: column;
+    /* justify-content: end; */
+    padding: 30px 15px 20px 15px;
+    width: 50%;
+}
+
+.item-text {	
+    /* background-color: rgba(17, 17, 17, 0.75); */
+}
+
 .item-header{
 	margin-bottom: 12px;
-	color: #b5b5b5;
 }
 
-.linkContainer{
+.tag-container{
 	align-self: flex-end;
 	display: -webkit-flex;
 	display: flex;
@@ -192,58 +325,100 @@ p {
 	flex-flow: wrap;
 	-webkit-justify-content: center;
 	justify-content: center;
-
-	margin: 10px 20px 12px 20px;
-	padding-top: 20px;	
-	padding-bottom: 20px;
+	margin: 20px 20px 12px 20px;
+	padding: 10px 0px;
 	border-top: 3px solid #DCDCDC;
-	border-image: linear-gradient(45deg, #c65353, #52a5a5) 50;
+	border-image: linear-gradient(45deg, var(--clr-primary), var(--clr-secondary)) 50;
 	width: 100%;
 }
 
-.tag{
+.tag-container-footer {
+	align-self: flex-end;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: wrap;
+	flex-flow: wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	margin: 0px 20px 12px 20px;
+	padding: 10px 0px; 
+}
+
+
+.tag {
 	border-radius: 5px;
-	background-color: #1b1b1b;
+	background-color: var(--clr-black);
 	padding: 2px 8px;
 	margin: 7px;
 	font-weight: 700;
-	letter-spacing: 2px;
+	color: var(--clr-white-gray);
 }
 
-.tag:hover{
-	background-color: #555555;
-	color: #66cccc;
+.tag:hover {
+	background-color: #212121;
+	color: var(--clr-primary);	
+	transition: .5;
 }
 
-.tag a:hover{
-	background-color: #555555;
-	color: #52a5a5;
-}
-
-@media (max-width: 684px) {
-	.rowcontainer{
-		max-width: 360px;
-	}
-
+.tag a:hover {
+	color: var(--clr-primary);
 }
 
 .rowcontainer.noshadow{	
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	background-color: #1b1b1b;
-	margin-bottom: 20px;	
+	background-color: var(--clr-dark-bg);;
+	margin-bottom: 10px;	
 }
 
 .contact-container{
-	background: #c65353;
+	background: var(--clr-dark-bg);;
 	color: #bdbdbd;
-	padding: 20px;
-
+	padding: 100px 20px 120px 20px;
 }
 
+.contact-body {
+	max-width: 1020px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	gap: 20px;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {	
+	display: block;
+	max-width: 100%;/* Full width */
+	width: 600px;
+	padding: 12px; /* Some padding */ 
+	border: 1px solid var(--clr-dark-bg); /* Gray border */
+	border-radius: 4px; /* Rounded borders */
+	box-sizing: border-box; /* Make sure that padding and width stays in place */
+	margin-top: 6px; /* Add a top margin */
+	margin-bottom: 16px; /* Bottom margin */
+	resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+	background-color: var(--clr-darkest-bg);
+	color: var(--clr-body-text);
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+	background-color: var(--clr-primary);
+	color: white;
+	font-weight: 700;
+	padding: 8px 16px;
+	border: none;
+	cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+	background-color: var(--clr-secondary);
+  }
+
+
 .rowcontainer h1{
-	color: #555555;
+	color: #2e1717;
 	font-weight: 700;
 }
 
@@ -256,7 +431,7 @@ p {
 }
 
 .item p {
-	color: #999;
+	color: var(--clr-body-text);
 }
 
 .align-content-center {
@@ -276,14 +451,14 @@ p {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #2d2d30;
+	background-color: var(--clr-darkest-bg);
 	color: #f5f5f5;
-	padding: 30px 30px 60px 30px;	
+	padding: 80px 30px 60px 30px;	
 	height: 100%;
 }
 
-.myFooter p {
-	max-width: 500px;
+.myFooter .container {
+	max-width: 720px;
 	margin:auto;
 }
 
@@ -292,85 +467,113 @@ p {
 }
 
 .myFooter a:hover {
-	color: #66cccc;
+	color: var(--clr-primary);
 	text-decoration: none;
 }
 
 
 #send-button:hover{
-	background: #66cccc;
+	background: var(--clr-primary);
 
 }
 
 #contact{
-	color: white;
+	color: var(--clr-body-text);
 }
 
+.up-arrow {
+	font-size: 2.5rem;
+}
 
+.footer-icon {
+	display: flex;
+	justify-content: center;
+}
+
+.footer-title {
+	text-align: center;
+	margin-bottom: 12px;
+}
 
 @media (max-width: 768px) {
 
-	.projectsContainer{		
+	.contact-body {
+		flex-direction: column;
+	}
+
+	.contact-form {
+		width: 100%;
+	}
+
+	.projectsContainer {		
 		margin:auto;
 	}
 
-	.projectsContainer h1{
+	.projectsContainer h1 {
 		font-size: 34px;
 	}
 
-	.menuRightside{
-		display: flex;
-		width: 100%;
-		justify-content: space-around;
-
+	.rowcontainer {
+		padding: 0px;		
+		box-shadow: 0px 4px 4px 0px var(--clr-black);
+    	background-color: rgba(17, 17, 17, 0.75);
 	}
 
-	.menu-container{
+	.menu-container {
 		height: 0px;
 		/* This aligns items to the end line on main-axis */
 	}
 
-	.menu{    	
-		bottom: 0;
+	.menu {				
+		display: flex;		
+		justify-content: space-around;
+		width: 100%;
+		text-transform: uppercase;
 		position: fixed;
+		bottom: 0;
 		text-align: center;
-
 		font-size: 3.2vw !important;
 		letter-spacing: 2px;
+		background-color: var(--clr-darkest-bg);
+	}
+
+	.main-wrapper {
+		margin: 0px;
+		padding: 16px 12px;
+		/* border-right: 0px; */
+		/* background-color: rgba(0,0,0,0);
+		box-shadow: none; */
 	}
 
 	.center-content {
-		width: 94%;
+		width: 100%;
+		min-width: 100%;
 	}
 
 	.center-content h1 {
-		font-size: 10vw;
+		font-size: 12vw;
 	}
 
-	.center-content h3 {
+	.center-content h2 {
 		font-size: 4.6vw;
 	}
 
-	.center-content p {
-		font-size: clamp(14px, 3.6vw, 18px);
-	}
-
-	.logo{
+	.logo {
 		display: none;
 	}
 
-	.hero-image{
+	.hero-image {
 		background-image: url("../images/ljusProfilJan2standing.jpg");
 	}
-}
 
-@media (max-width: 689px) {
-	.rowcontainer{
-		max-width: 360px;
+	.item {
+		width: 100%;
+		padding: 12px 16px;
 	}
 }
 
 @media (max-width: 400px) {
+
 	.projectsContainer{
 		padding-right: 8px;
 		padding-left: 8px;
